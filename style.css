@@ -261,7 +261,7 @@ h1, h2, h3 { font-family: var(--display); font-weight: 800; line-height: 1.04; l
 .svc--lg { grid-column: span 3; }
 .svc--sm { grid-column: span 2; }
 .svc--md { grid-column: span 3; }
-.svc__img { position: absolute; inset: 0; }
+.svc__img { position: absolute; inset: 0; background: var(--navy-900); }
 .svc__img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s var(--ease); }
 .svc:hover .svc__img img { transform: scale(1.06); }
 .svc__scrim { position: absolute; inset: 0; background: linear-gradient(0deg, rgba(11,25,42,0.92) 6%, rgba(11,25,42,0.5) 42%, rgba(11,25,42,0.12) 100%); }
