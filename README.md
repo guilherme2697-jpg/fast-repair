@@ -14,18 +14,18 @@ GSAP e ScrollTrigger são carregados por CDN.
 ├── index.html          # Página única (todo o conteúdo)
 ├── style.css           # Estilos (variáveis de marca no topo)
 ├── script.js           # Menu mobile, FAQ, animações (GSAP)
-├── vercel.json         # Configuração de deploy (headers, cache)
-├── .gitignore
+├── .htaccess           # Config Apache/Hostinger (HTTPS, cache, gzip, segurança)
 ├── README.md
+├── .gitignore
 └── images/
     ├── hero-desktop.webp / hero-mobile.webp
-    ├── service-*.webp        # Imagens dos serviços
+    ├── service-*.webp                # Imagens dos serviços
+    ├── service-jardinagem.jpg / service-administrativo.jpg
     ├── cost-of-stopping.webp / cta-building.webp / why-response.webp
     ├── favicon.svg / og-image.jpg
-    └── parceiros/            # Logos dos clientes (faixa de confiança)
-        ├── tokio-marine.png / sompo.png / ascensus.png
-        ├── geely.webp
-        └── nissan.svg / renault.svg
+    └── parceiros/                    # Logos dos clientes (faixa de confiança)
+        ├── nissan.svg / renault.svg
+        └── geely.webp / ascensus.png
 ```
 
 ---
@@ -41,33 +41,29 @@ npx serve .
 
 ---
 
-## 🚀 Deploy
+## 🚀 Deploy na Hostinger
 
-### 1. Subir no GitHub
+O site é estático — basta enviar os arquivos para a pasta `public_html`.
 
-```bash
-git add .
-git commit -m "Fast Repair landing page"
-git branch -M main
-git remote add origin https://github.com/SEU-USUARIO/fast-repair.git
-git push -u origin main
-```
+1. Entre no **hPanel** da Hostinger → **Gerenciador de Arquivos**.
+2. Abra a pasta **`public_html`** do seu domínio.
+3. Envie **todo o conteúdo desta pasta** (com a estrutura preservada):
+   `index.html`, `style.css`, `script.js`, `.htaccess` e a pasta `images/`.
+   - O `index.html` precisa ficar na **raiz** de `public_html`.
+   - Não precisa enviar `README.md`, `.gitignore` nem a pasta `.git`.
+4. Acesse o domínio — o site estará no ar.
 
-> Crie o repositório vazio antes em https://github.com/new (nome sugerido: `fast-repair`).
+**Mais fácil:** compacte tudo em um `.zip` (com os arquivos na raiz do zip),
+envie pelo Gerenciador de Arquivos dentro de `public_html` e use **Extrair**.
 
-### 2. Publicar no Vercel
+### Domínio e HTTPS
+- Aponte o domínio `fastrepairfacilities.com.br` para a hospedagem (no hPanel, em Domínios).
+- Ative o **SSL grátis** (hPanel → Segurança → SSL). O `.htaccess` já força HTTPS.
 
-1. Acesse https://vercel.com e faça login com o GitHub.
-2. **Add New → Project** e importe o repositório `fast-repair`.
-3. Em *Framework Preset*, deixe **Other** (é site estático, sem build).
-   - Build Command: *(vazio)*
-   - Output Directory: *(vazio / raiz)*
-4. Clique em **Deploy**. Pronto — o site fica no ar em uma URL `*.vercel.app`.
-
-Cada `git push` na branch `main` publica automaticamente uma nova versão.
-
-#### Domínio próprio (opcional)
-No painel do projeto na Vercel: **Settings → Domains → Add** e siga as instruções de DNS.
+### Backup / versionamento
+O código também fica no GitHub: https://github.com/guilherme2697-jpg/fast-repair
+Para publicar uma alteração: edite os arquivos, faça `git push` (backup) **e** reenvie
+os arquivos alterados para `public_html` na Hostinger.
 
 ---
 
