@@ -76,7 +76,7 @@ No painel do projeto na Vercel: **Settings → Domains → Add** e siga as instr
 | O quê | Onde |
 |-------|------|
 | Textos | `index.html` |
-| Telefone / mensagem do WhatsApp | procurar por `wa.me/5541996813384` no `index.html` |
+| Telefone / mensagem do WhatsApp | procurar por `wa.me/5541998667070` no `index.html` |
 | Cores e tipografia | variáveis no topo do `style.css` (`:root`) |
 | Logos dos clientes | pasta `images/parceiros/` (manter os mesmos nomes) |
 
