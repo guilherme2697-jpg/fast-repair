@@ -262,8 +262,12 @@ h1, h2, h3 { font-family: var(--display); font-weight: 800; line-height: 1.04; l
 .svc--sm { grid-column: span 2; }
 .svc--md { grid-column: span 3; }
 .svc__img { position: absolute; inset: 0; background: var(--navy-900); }
-.svc__img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s var(--ease); }
+.svc__img img { width: 100%; height: 100%; object-fit: cover; object-position: center; transition: transform 0.7s var(--ease); }
 .svc:hover .svc__img img { transform: scale(1.06); }
+/* Fotos verticais: mostrar a parte de cima (rosto/ação), nao o centro */
+.svc__img img[src*="facilities"] { object-position: 50% 22%; }
+.svc__img img[src*="jardinagem"] { object-position: 50% 30%; }
+.svc__img img[src*="administrativo"] { object-position: 50% 18%; }
 .svc__scrim { position: absolute; inset: 0; background: linear-gradient(0deg, rgba(11,25,42,0.92) 6%, rgba(11,25,42,0.5) 42%, rgba(11,25,42,0.12) 100%); }
 .svc__body { position: relative; z-index: 2; margin-top: auto; padding: 22px; color: #fff; }
 .svc__ic { width: 38px; height: 38px; border-radius: 10px; background: rgba(224,119,46,0.16); border: 1px solid rgba(224,119,46,0.4); display: flex; align-items: center; justify-content: center; color: var(--orange-soft); margin-bottom: 14px; }
